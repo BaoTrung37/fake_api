@@ -24,7 +24,7 @@
             }
         },
         "interactions": {
-            "idFriend": [
+            "int": [
                 100
             ]
         },
