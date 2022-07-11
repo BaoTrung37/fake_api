@@ -1,14 +1,26 @@
 {
-    "Post": {
-      "title": { "string": {} },
+    "Users":{
+        "name": { "regexp": "[A-Z][a-z]{5,10}" },
+        "avatar": {
+            "regexp": "https://i\\.pravatar\\.cc/150\\?u=[0-9]{5}"
+          },
+        "posts": {
+            "hasMany": "Posts"
+        }
+          
+    },
+    "Posts": {
+      "caption": { "string": {} },
+      "image": { "regexp": "https://picsum\\.photos/seed/[0-9]{5}/1920/1080" },
       "comments": {
-        "hasMany": "Comment"
+        "hasMany": "Comments"
       }
     },
-    "Comment": {
-      "body": { "string": {} },
-      "post": {
-        "belongsTo": "Post"
+    "Comments": {
+      "content": { "loremWords": { "minLength": 5, "maxLength": 20 } },
+      "posts": {
+        "belongsTo": "Posts"
       }
     }
+
   }
