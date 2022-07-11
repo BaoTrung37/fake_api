@@ -1,16 +1,16 @@
 {
     
-    "Posts": {
+    "Post": {
       "caption": { "loremWords": { "minLength": 5, "maxLength": 20 } },
       "image": { "regexp": "https://picsum\\.photos/seed/[0-9]{5}/1920/1080" },
       "comments": {
-        "hasMany": "Comments"
+        "hasMany": "Comment"
       }
     },
-    "Comments": {
+    "Comment": {
       "content": { "loremWords": { "minLength": 5, "maxLength": 20 } },
-      "posts": {
-        "belongsTo": "Posts"
+      "post": {
+        "belongsTo": "Post"
       }
     }
   }
