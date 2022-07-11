@@ -1,29 +1,14 @@
 {
-    "users": [
-        {
-         "name": "Mamie Harvey",
-         "image": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/809.jpg",
-         "id": "1"
-        },
-        {
-         "name": "Michele D'Amore",
-         "image": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/490.jpg",
-         "id": "2"
-        },
-        {
-         "name": "Nadine Turcotte IV",
-         "image": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/932.jpg",
-         "id": "3"
-        },
-        {
-         "name": "Yolanda Jacobson",
-         "image": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/33.jpg",
-         "id": "4"
-        },
-        {
-         "name": "Armando Wiegand",
-         "image": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/141.jpg",
-         "id": "5"
-        }
-       ]
-}
+    "Post": {
+      "title": { "string": {} },
+      "comments": {
+        "hasMany": "Comment"
+      }
+    },
+    "Comment": {
+      "body": { "string": {} },
+      "post": {
+        "belongsTo": "Post"
+      }
+    }
+  }
