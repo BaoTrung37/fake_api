@@ -1,10 +1,21 @@
 {
-    
+    "User":{
+        "name": { "regexp": "[A-Z][a-z]{5,10}" },
+        "avatar": {
+            "regexp": "https://i\\.pravatar\\.cc/150\\?u=[0-9]{5}"
+          },
+        "posts": {
+            "hasMany": "Post"
+        }
+    },
     "Post": {
       "caption": { "loremWords": { "minLength": 5, "maxLength": 20 } },
       "image": { "regexp": "https://picsum\\.photos/seed/[0-9]{5}/1920/1080" },
       "comments": {
         "hasMany": "Comment"
+      },
+      "user": {
+        "belongsTo": "User"
       }
     },
     "Comment": {
