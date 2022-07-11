@@ -7,13 +7,13 @@
         "posts": {
             "hasMany": "Posts"
         }
-          
     },
     "Posts": {
-      "caption": { "string": {} },
+      "caption": { "loremWords": { "minLength": 5, "maxLength": 20 } },
       "image": { "regexp": "https://picsum\\.photos/seed/[0-9]{5}/1920/1080" },
       "comments": {
-        "hasMany": "Comments"
+        "hasMany": "Comments",
+        "belongsTo": "Users"
       }
     },
     "Comments": {
@@ -22,5 +22,4 @@
         "belongsTo": "Posts"
       }
     }
-
   }
