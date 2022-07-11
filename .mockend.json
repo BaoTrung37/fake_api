@@ -16,6 +16,9 @@
       },
       "user": {
         "belongsTo": "User"
+      },
+      "likes": {
+        "hasMany": "Like"
       }
     },
     "Comment": {
@@ -23,5 +26,13 @@
       "post": {
         "belongsTo": "Post"
       }
+    },
+    "Like":{
+        "user": {
+            "belongsTo": "User"
+        },
+        "post": {
+            "belongsTo": "Post"
+        }
     }
   }
