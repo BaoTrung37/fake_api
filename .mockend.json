@@ -1,38 +1,53 @@
 {
-    "User":{
-        "name": { "regexp": "[A-Z][a-z]{5,10}" },
+    "User": {
+        "name": {
+            "regexp": "[A-Z][a-z]{5,10}"
+        },
         "avatar": {
             "regexp": "https://i\\.pravatar\\.cc/150\\?u=[0-9]{5}"
-          },
-        "posts": {
-            "hasMany": "Post"
         }
     },
     "Post": {
-      "caption": { "loremWords": { "minLength": 5, "maxLength": 20 } },
-      "image": { "regexp": "https://picsum\\.photos/seed/[0-9]{5}/1920/1080" },
-      "comments": {
-        "hasMany": "Comment"
-      },
-      "user": {
-        "belongsTo": "User"
-      },
-      "likes": {
-        "hasMany": "Like"
-      }
+        "caption": {
+            "loremWords": {
+                "minLength": 5,
+                "maxLength": 20
+            }
+        },
+        "image": {
+            "regexp": "https://picsum\\.photos/seed/[0-9]{5}/1920/1080"
+        },
+        "dateCreated": {
+            "dateTime": {
+                "max": "2022-7-11T23:59:59Z"
+            }
+        },
+        "interactions": {
+            "user": [
+                {
+                    "id": {
+                        "int": {
+                            "min": 1,
+                            "max": 100
+                        }
+                    }
+                }
+            ]
+        },
+        "idUser": {
+            "int": {
+                "min": 1,
+                "max": 100
+            }
+        }
     },
     "Comment": {
-      "content": { "loremWords": { "minLength": 5, "maxLength": 20 } },
-      "post": {
-        "belongsTo": "Post"
-      }
-    },
-    "Like":{
-        "user": {
-            "belongsTo": "User"
-        },
-        "post": {
-            "belongsTo": "Post"
+        "content": {
+            "loremWords": {
+                "minLength": 10,
+                "maxLength": 30
+            }
         }
-    }
-  }
+    },
+    "Like": {}
+}
