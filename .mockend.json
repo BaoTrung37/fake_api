@@ -19,7 +19,7 @@
         },
         "dateCreated": {
             "dateTime": {
-                "max": "2022-7-11T23:59:59Z"
+                "min": "2022-07-11T23:59:59Z"
             }
         },
         "interactions": {
