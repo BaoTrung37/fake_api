@@ -23,11 +23,6 @@
                 "max": "2023-07-11T23:59:59Z"
             }
         },
-        "interactions": {
-            "int": [
-                100
-            ]
-        },
         "idOwner": {
             "int": {
                 "min": 1,
@@ -41,7 +36,38 @@
                 "minLength": 10,
                 "maxLength": 30
             }
+        },
+        "dateCreated": {
+            "dateTime": {
+                "min": "2022-07-11T23:59:59Z",
+                "max": "2023-07-11T23:59:59Z"
+            }
+        },
+        "idOwner": {
+            "int": {
+                "min": 1,
+                "max": 100
+            }
+        },
+        "idPost": {
+            "int": {
+                "min": 1,
+                "max": 100
+            }
         }
     },
-    "Like": {}
+    "Like": {
+        "idOwner": {
+            "int": {
+                "min": 1,
+                "max": 100
+            }
+        },
+        "idPost": {
+            "int": {
+                "min": 1,
+                "max": 100
+            }
+        }
+    }
 }
